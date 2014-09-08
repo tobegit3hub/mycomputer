@@ -1,3 +1,9 @@
+
+.timeline-image > img{
+    width:100%;
+    max-width:500px;
+}
+
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
