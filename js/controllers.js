@@ -2,13 +2,13 @@ function PhoneListCtrl($scope) {
   $scope.phones = [
     {"name": "Nexus S",
      "image_url": "macbook_air.jpeg",
-     "snippet": "Fast just got faster with Nexus S."},
+     "snippet": "MacBook Air苹果电脑Fast just got faster with Nexus S."},
     {"name": "Motorola XOOM™ with Wi-Fi",
      "image_url": "miwifi.jpg",
-     "snippet": "The Next, Next Generation tablet."},
+     "snippet": "小米路由器"},
     {"name": "MOTOROLA XOOM™",
      "image_url": "newbalance.jpg",
-     "snippet": "The Next, Next Generation tablet."}
+     "snippet": "球鞋，The Next, Next Generation tablet."}
   ];
 }
 

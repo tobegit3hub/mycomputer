@@ -3,6 +3,8 @@
   <head>
     <title>tobe</title>
 
+<meta charset="UTF-8">
+
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -12,27 +14,27 @@
   <body>
 
 
-
-    <div class="container">
+    <div class="my_container">
 
     <div ng-app>
 
-      <div class="page-header">
-        <h1 id="timeline">Tobe, the root user</h1>
-        <input ng-model="query">
-      </div>
+      <div class="page-header row">
+        
+       <div class="col-md-10">
+       <h1 class="user_name">Tobe, the root user</h1>
+       </div>
+
+        <div class="col-md-22 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" class="form-control" placeholder="" ng-model="search">
+        </div>
+
+    </div>
  
-
-      <h1>Nothing here {{ 678 + 9000}}</h1>
-
-
-
-
-<div ng-controller="PhoneListCtrl">
-
+ <div ng-controller="PhoneListCtrl">
 
   <ul class="timeline">
-    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in phones | filter: query">
+    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in phones | filter: search">
 
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
          <div class="timeline-panel">
@@ -58,12 +60,12 @@
 
           <div class="timeline-panel">
             <div class="timeline-image">
-              <img src="macbook_air.jpeg">
+              <img src="">
             </div>
 
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscing
-s elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+	      <p>分享你的品质生活</p>
+              <p><small>Share your life</small></p>
             </div>
           </div>
         </li>
@@ -73,88 +75,103 @@ s elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis s
           <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <h4 class="timeline-title">MyComputer.xyz是一个开源网站</h4>
             </div>
-            <img src="victor_nano_7.jpg">
+            <img src="">
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>
+              <p><small>It's opensource in github.com</small></p>
             </div>
           </div>
         </li>
+
         <li>
           <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <h4 class="timeline-title">你可以在这里登录</h4>
             </div>
 
             <div class="timeline-image">
-              <img src="hongmi_note.jpg">
+              <img src="">
             </div>
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+      <form class="form-signin" role="form">
+        <input type="email" class="form-control" placeholder="Email address" required>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
             </div>
           </div>
         </li>
         <li class="timeline-inverted">
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <h4 class="timeline-title">也可以在这里注册</h4>
             </div>
-              <img src="newbalance.jpg">
+              <img src="">
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+      <form class="form-signin" role="form">
+        <input type="email" class="form-control" placeholder="Email address" required>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </form>
+
             </div>
           </div>
         </li>
+
         <li>
           <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <h4 class="timeline-title">有人评论</h4>
             </div>
-            <img src="miwifi.jpg">
+            <img src="">
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              <hr>
-              <div class="btn-group">
-                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                  <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
+              <p>mycomputer.xyz/apple挺不错的</p>
             </div>
           </div>
         </li>
+
         <li class="timeline-inverted">
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <h4 class="timeline-title">也有人评论</h4>
             </div>
-            <img src="xiaomi_one.jpg">
+            <img src="">
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              <p>试试评论</p>
             </div>
           </div>
         </li>
+
+        <li>
+          <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">有人评论</h4>
+            </div>
+            <div class="timeline-body">
+              <p>发现小米的海报做得不错</p>
+            </div>
+          </div>
+        </li>
+
         <li class="timeline-inverted">
           <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <h4 class="timeline-title">请留下你的评论吧</h4>
             </div>
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              <form>
+              <input></input>
+              </form>
             </div>
           </div>
         </li>
+
     </ul>
 </div>
 
