@@ -26,7 +26,7 @@
 
         <div class="col-md-22 input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input type="text" class="form-control" placeholder="" ng-model="search">
+            <input type="text" class="form-control" placeholder="" ng-model="search" autofocus>
         </div>
 
     </div>
@@ -34,18 +34,41 @@
  <div ng-controller="PhoneListCtrl">
 
   <ul class="timeline">
-    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in phones | filter: search">
+    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in filter_phones = (phones | filter: search)">
 
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
          <div class="timeline-panel">
-         <img class="timeline-image"  ng-src={{phone.image_url}}>
+         <img class="timeline-image" ng-src={{phone.image_url}}>
          <div class="timeline-body">
            <p>{{phone.snippet}}</p>
          </div>
          </div>
-
     </li>
+
+    <!-- Display a image when no item inserted -->
+    <li ng-show="!phones.length">
+          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+         <div class="timeline-panel">
+         <img class="timeline-image" src="pikachu.gif">
+         <div class="timeline-body">
+          <h1>Add something here</h1>
+         </div>
+    </li>
+
   </ul>
+
+  <div ng-hide="filter_phones.length || !phones.length">
+  <ul class="timeline">
+       <li>
+          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+         <div class="timeline-panel">
+         <img class="timeline-image" src="pikachu.gif">
+         <div class="timeline-body">
+          <h1>No item matches</h1>
+        </div>
+       </li>
+   </ul>
+
 </div>
 
       <h1>Nothing here {{ 678 + 9000}}</h1>
