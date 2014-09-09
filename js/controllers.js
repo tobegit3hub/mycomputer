@@ -1,6 +1,6 @@
 function PhoneListCtrl($scope) {
   $scope.phones = [
-/*    {"name": "Nexus S",
+    {"name": "Nexus S",
      "image_url": "macbook_air.jpeg",
      "snippet": "MacBook Air苹果电脑Fast just got faster with Nexus S."},
     {"name": "Motorola XOOM™ with Wi-Fi",
@@ -8,7 +8,7 @@ function PhoneListCtrl($scope) {
      "snippet": "小米路由器"},
     {"name": "MOTOROLA XOOM™",
      "image_url": "newbalance.jpg",
-     "snippet": "球鞋，The Next, Next Generation tablet."} */
+     "snippet": "球鞋，The Next, Next Generation tablet."}
   ]; 
 }
 

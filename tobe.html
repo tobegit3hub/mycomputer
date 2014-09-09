@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <title>tobe</title>
 
@@ -16,8 +16,6 @@
 
     <div class="my_container">
 
-    <div ng-app>
-
       <div class="page-header row">
         
        <div class="col-md-10">
@@ -30,12 +28,12 @@
         </div>
 
     </div>
- 
+
+ <!-- Display all items --> 
  <div ng-controller="PhoneListCtrl">
 
   <ul class="timeline">
     <li ng-class-even="'timeline-inverted'" ng-repeat="phone in filter_phones = (phones | filter: search)">
-
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
          <div class="timeline-panel">
          <img class="timeline-image" ng-src={{phone.image_url}}>
@@ -45,39 +43,41 @@
          </div>
     </li>
 
-    <!-- Display a image when no item inserted -->
+    <!-- If no item inserted -->
     <li ng-show="!phones.length">
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
          <div class="timeline-panel">
          <img class="timeline-image" src="pikachu.gif">
          <div class="timeline-body">
-          <h1>Add something here</h1>
+          <h2>Pikachu say it's empty. Add one!</h2>
          </div>
+    </li>
+   
+    <!-- If has items -->
+    <li ng-show="phones.length && filter_phones.length">
+      <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
     </li>
 
   </ul>
 
+  <!-- If no item when search -->
   <div ng-hide="filter_phones.length || !phones.length">
   <ul class="timeline">
        <li>
-          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+          <div class="timeline-badge"><a href="javascript:document.location.reload();" onclick="window.status='Refresh'; return true"><i class="glyphicon glyphicon-check"></i></a></div>
          <div class="timeline-panel">
          <img class="timeline-image" src="pikachu.gif">
          <div class="timeline-body">
-          <h1>No item matches</h1>
+          <h2>Pikachu say no item matches. Refresh!</h2>
         </div>
        </li>
    </ul>
 
 </div>
 
-      <h1>Nothing here {{ 678 + 9000}}</h1>
-
-    </div>
+      <h1>Test angular {{ 678 + 9000}}</h1>
 
     <ul class="timeline">
-
-
         <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
 
