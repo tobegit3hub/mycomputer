@@ -10,13 +10,12 @@ phonecatControllers.controller('HomeCtrl', ['$scope',
   }]);
 
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
-  function($scope, $http) {
-    $http.get('phones.json').success(function(data) {
+phonecatControllers.controller('PhoneListCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('' + $routeParams.phoneId +'.json').success(function(data) {
       $scope.phones = data;
     });
 
-    $scope.orderProp = 'age';
   }]);
 
 
