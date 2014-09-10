@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html ng-app>
-  <head>
-    <title>tobe</title>
 
-<meta charset="UTF-8">
-
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-<script src="js/controllers.js"></script>
-  </head>
-
-  <body>
-
-
-    <div class="my_container">
 
       <div class="page-header row">
-        
+
        <div class="col-md-10">
        <h1 class="user_name">Tobe, the root user</h1>
        </div>
@@ -29,7 +13,7 @@
 
     </div>
 
- <!-- Display all items --> 
+ <!-- Display all items -->
  <div ng-controller="PhoneListCtrl">
 
   <ul class="timeline">
@@ -52,7 +36,7 @@
           <h2>Pikachu say it's empty. Add one!</h2>
          </div>
     </li>
-   
+
     <!-- If has items -->
     <li ng-show="phones.length && filter_phones.length">
       <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
@@ -74,138 +58,3 @@
    </ul>
 
 </div>
-
-      <h1>Test angular {{ 678 + 9000}}</h1>
-
-    <ul class="timeline">
-        <li>
-          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
-
-          <div class="timeline-panel">
-            <div class="timeline-image">
-              <img src="">
-            </div>
-
-            <div class="timeline-body">
-	      <p>分享你的品质生活</p>
-              <p><small>Share your life</small></p>
-            </div>
-          </div>
-        </li>
-
-
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">MyComputer.xyz是一个开源网站</h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p><small>It's opensource in github.com</small></p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">你可以在这里登录</h4>
-            </div>
-
-            <div class="timeline-image">
-              <img src="">
-            </div>
-            <div class="timeline-body">
-      <form class="form-signin" role="form">
-        <input type="email" class="form-control" placeholder="Email address" required>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">也可以在这里注册</h4>
-            </div>
-              <img src="">
-            <div class="timeline-body">
-      <form class="form-signin" role="form">
-        <input type="email" class="form-control" placeholder="Email address" required>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-      </form>
-
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">有人评论</h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p>mycomputer.xyz/apple挺不错的</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-inverted">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">也有人评论</h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p>试试评论</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">有人评论</h4>
-            </div>
-            <div class="timeline-body">
-              <p>发现小米的海报做得不错</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-inverted">
-          <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">请留下你的评论吧</h4>
-            </div>
-            <div class="timeline-body">
-              <form>
-              <input></input>
-              </form>
-            </div>
-          </div>
-        </li>
-
-    </ul>
-</div>
-
-<script src="js/controllers.js"></script>
-<script src="app.js"></script>
-
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-route/angular-route.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  </body>
-
-</html>

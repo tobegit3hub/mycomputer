@@ -1,30 +1,28 @@
-function PhoneListCtrl($scope) {
-  $scope.phones = [
-    {"name": "Nexus S",
-     "image_url": "macbook_air.jpeg",
-     "snippet": "MacBook Air苹果电脑Fast just got faster with Nexus S."},
-    {"name": "Motorola XOOM™ with Wi-Fi",
-     "image_url": "miwifi.jpg",
-     "snippet": "小米路由器"},
-    {"name": "MOTOROLA XOOM™",
-     "image_url": "newbalance.jpg",
-     "snippet": "球鞋，The Next, Next Generation tablet."}
-  ]; 
-}
+'use strict';
+
+/* Controllers */
+
+var phonecatControllers = angular.module('phonecatControllers', []);
+
+phonecatControllers.controller('HomeCtrl', ['$scope',
+  function($scope) {
+
+  }]);
+
+
+phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+    $http.get('phones.json').success(function(data) {
+      $scope.phones = data;
+    });
+
+    $scope.orderProp = 'age';
+  }]);
+
 
 /*
-var app = angular.module("app", []);
-
-app.controller("PhoneListCtrl", function($scope, $http) {
-  $http.get('https://raw.githubusercontent.com/tobegit3hub/mycomputer/master/phones.json').
-    success(function(data, status, headers, config) {
-      $scope.posts = data;
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
-});
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.phoneId = $routeParams.phoneId;
+  }]);
 */
-
-
-
