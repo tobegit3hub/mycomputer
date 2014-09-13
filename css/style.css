@@ -1,6 +1,12 @@
 
+
 .user_name {
   margin-top: -5px;
+  font-size: x-large;
+}
+
+.user_gravatar {
+  float: right;
 }
 
 .my_container {
