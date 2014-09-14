@@ -31,5 +31,7 @@ mycomputerControllers.controller('UserItemsController', ['$scope', '$routeParams
         $scope.items = data;
       }
     });
+
+    $scope.adding = false;
   }
 ]);
