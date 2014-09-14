@@ -6,12 +6,12 @@
   <div class="page-header row">
     <!-- User name and description -->
     <div class="col-md-6">
-      <span class="user_name">Tobe, the root user</span>
+      <span class="user_name">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></span>
     </div>
 
     <!-- Gravatar image -->
     <div class="col-md-4">
-      <gravatar-image email="obeg3oogle@gmail.com" size="50"></gravatar-image>
+      <gravatar-image email={{user.Email}} size="50"></gravatar-image>
     </div>
 
     <!-- Search button with Bootstrap -->
@@ -24,8 +24,9 @@
   <!-- Display all items which are images and descriptions-->
   <ul class="timeline">
     <!-- Normal view for search items -->
-    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items | filter: search) ">
-      <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+
+    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items | filter: search) track by $index">
+      <div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
         <img class="timeline-image" ng-src={{item.Image}}>
         <div class="timeline-body">
@@ -34,9 +35,10 @@
       </div>
     </li>
 
+
     <!-- If has no item, add a pikachu item to add item -->
     <li ng-show="!items.length">
-      <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
+      <div class="timeline-badge primary"><i class="glyphicon glyphicon-edit"></i></div>
       <div class="timeline-panel">
         <img class="timeline-image" src="/static/image/pikachu.gif">
         <div class="timeline-body">
@@ -47,13 +49,13 @@
 
     <!-- If has items, add a button to add item -->
     <li ng-show="items.length && filter_items.length">
-      <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
+      <div class="timeline-badge primary"><i class="glyphicon glyphicon-edit"></i></div>
     </li>
 
 
     <!-- If has items but search no item, add pickchu item to refresh -->
     <li ng-hide="filter_items.length || !items.length">
-      <div class="timeline-badge">
+      <div class="timeline-badge warning">
         <a href="javascript:document.location.reload();" onclick="window.status='Refresh'; return true"><i class="glyphicon glyphicon-refresh"></i></a>
       </div>
       <div class="timeline-panel">

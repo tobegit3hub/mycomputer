@@ -14,21 +14,21 @@ func (this *MainController) Get() {
 }
 
 type ObejctController struct {
-    beego.Controller
+	beego.Controller
 }
 
-func (this *ObejctController) Post(){
-
-}
-
-func (this *ObejctController) Get(){
+func (this *ObejctController) Post() {
 
 }
 
-func (this *ObejctController) Put(){
+func (this *ObejctController) Get() {
 
 }
 
-func (this *ObejctController) Delete(){
+func (this *ObejctController) Put() {
+
+}
+
+func (this *ObejctController) Delete() {
 
 }
