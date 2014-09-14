@@ -22,9 +22,9 @@ CREATE TABLE IF NOT EXISTS user (
 
 CREATE TABLE IF NOT EXISTS item (
    number int PRIMARY KEY,
+   username varchar(255) REFERENCES user(name),
    image varchar(255),
-   description varchar(255),
-   username varchar(255) REFERENCES user(name)
+   description varchar(255)
 );
 
 CREATE TABLE IF NOT EXISTS comment (

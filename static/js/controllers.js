@@ -1,3 +1,4 @@
+
 'use strict';
 
 /* The angular application controllers */
@@ -13,11 +14,22 @@ mycomputerControllers.controller('UserItemsController', ['$scope', '$routeParams
   function($scope, $routeParams, $http) {
     /* Get the user data */
     $http.get('/api/' + $routeParams.username).success(function(data) {
-      $scope.user = data;
+      /* If the data is empty string, don't return objects */
+      if(typeof data.Name == "undefined") {
+        $scope.user = null;
+      } else {
+        $scope.user = data;
+      }
     });
+
     /* Get the user items data */
-    $http.get('api/' + $routeParams.username +'/items').success(function(data) {
-      $scope.items = data;
+    $http.get('/api/' + $routeParams.username +'/items').success(function(data) {
+      /* If the data is empty string, don't return objects */
+      if (typeof data[0].Username == "undefined") {
+        $scope.items = null;
+      } else {
+        $scope.items = data;
+      }
     });
   }
 ]);

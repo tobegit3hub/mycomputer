@@ -6,7 +6,13 @@
   <div class="page-header row">
     <!-- User name and description -->
     <div class="col-md-6">
-      <span class="user_name">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></span>
+      <div ng-show="user">
+        <span class="user_name">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></span>
+      </div>
+      <!-- If has no use, Todo: add button to add user
+      <div ng-show="!user">
+        <span class="user_name">No such user</span>
+      <div> -->
     </div>
 
     <!-- Gravatar image -->
