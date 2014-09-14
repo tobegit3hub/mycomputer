@@ -32,6 +32,7 @@ mycomputerControllers.controller('UserItemsController', ['$scope', '$routeParams
       }
     });
 
+    /* Determine whether pop up form to add item or not */
     $scope.adding = false;
   }
 ]);

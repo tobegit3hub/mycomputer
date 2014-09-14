@@ -69,7 +69,7 @@ func GetUser(username string) *User {
 
 func GetUserItems(username string) []*Item {
 	var items []*Item
-	_, err := orm.NewOrm().QueryTable("item").Filter("username", username).All(&items)
+	_, err := orm.NewOrm().QueryTable("item").Filter("username", username).OrderBy("-number").All(&items)
 	if err != nil {
 		return nil
 	}

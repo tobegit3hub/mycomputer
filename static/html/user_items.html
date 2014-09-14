@@ -31,7 +31,7 @@
   <ul class="timeline">
     <!-- Normal view for search items -->
     <!-- Todo: add edit button to edit item -->
-    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items | filter: search) | orderBy:-Number track by $index">
+    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items |filter: search) track by $index">
       <div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
         <img class="timeline-image" ng-src={{item.Image}}>
