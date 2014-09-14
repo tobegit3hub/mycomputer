@@ -24,42 +24,42 @@
   <!-- Display all items which are images and descriptions-->
   <ul class="timeline">
     <!-- Normal view for search items -->
-    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in filter_phones = (phones | filter: search) ">
+    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items | filter: search) ">
       <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
-        <img class="timeline-image" ng-src={{phone.image}}>
+        <img class="timeline-image" ng-src={{item.Image}}>
         <div class="timeline-body">
-          <p>{{phone.description}}</p>
+          <p>{{item.Description}}</p>
         </div>
       </div>
     </li>
 
     <!-- If has no item, add a pikachu item to add item -->
-    <li ng-show="!phones.length">
+    <li ng-show="!items.length">
       <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
       <div class="timeline-panel">
         <img class="timeline-image" src="/static/image/pikachu.gif">
         <div class="timeline-body">
-          <h2>Pikachu say it's empty. Add one!</h2>
+          <h2>Pikachu says it's empty. Add one!</h2>
         </div>
       </div>
     </li>
 
     <!-- If has items, add a button to add item -->
-    <li ng-show="phones.length && filter_phones.length">
-      <div class="timeline-badge"><i class="glyphicon glyphicon-add"></i></div>
+    <li ng-show="items.length && filter_items.length">
+      <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
     </li>
 
 
     <!-- If has items but search no item, add pickchu item to refresh -->
-    <li ng-hide="filter_phones.length || !phones.length">
+    <li ng-hide="filter_items.length || !items.length">
       <div class="timeline-badge">
         <a href="javascript:document.location.reload();" onclick="window.status='Refresh'; return true"><i class="glyphicon glyphicon-refresh"></i></a>
       </div>
       <div class="timeline-panel">
         <img class="timeline-image" src="/static/image/pikachu.gif">
         <div class="timeline-body">
-          <h2>Pikachu say no item matches. Refresh!</h2>
+          <h2>Pikachu says no item matches. Refresh!</h2>
         </div>
       </div>
     </li>
