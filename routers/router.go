@@ -14,4 +14,5 @@ func init() {
 	/* Api for angular requests */
 	beego.Router("/api/:user", &controllers.ApiController{}, "get:GetUser")
 	beego.Router("/api/:user/items", &controllers.ApiController{}, "get:GetUserItems")
+	beego.Router("/api/item", &controllers.ApiController{}, "post:AddItem")
 }

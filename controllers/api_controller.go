@@ -1,10 +1,9 @@
 package controllers
 
 import (
-	"fmt"
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
 	"mycomputer/models"
-	//       "encoding/json"
 )
 
 type ApiController struct {
@@ -25,9 +24,6 @@ func (this *ApiController) GetUser() {
 }
 
 func (this *ApiController) GetUserItems() {
-	o := &models.User{}
-	fmt.Println(o.Name)
-
 	username := this.GetString(":user")
 
 	items := models.GetUserItems(username)
@@ -38,4 +34,24 @@ func (this *ApiController) GetUserItems() {
 	}
 
 	this.ServeJson()
+}
+
+func (this *ApiController) AddItem() {
+  //var item models.Item
+  //this.ParseForm(&item)
+  //orm.NewOrm().Insert(&item)
+
+	number, _ := this.GetInt("number")
+	username := this.GetString("username")
+	image := this.GetString("image")
+	description := this.GetString("description")
+
+	beego.Debug(number);
+	beego.Debug(username);
+	beego.Debug(image);
+	beego.Debug(description);
+
+	item := models.Item{Number: number, Username: username, Image: image, Description: description}
+	orm.NewOrm().Insert(&item)
+
 }

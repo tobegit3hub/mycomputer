@@ -13,10 +13,10 @@ type User struct {
 }
 
 type Item struct {
-	Number      int64 `orm:"pk"`
-	Image       string
-	Description string
-	Username    string
+	Number      int64  `orm:"pk"`//`form:"number"`
+	Username    string //`form:"username"`
+	Image       string //`form:"image"`
+	Description string //`form:"description"`
 }
 
 type Comment struct {
@@ -68,7 +68,6 @@ func GetUser(username string) *User {
 }
 
 func GetUserItems(username string) []*Item {
-
 	var items []*Item
 	_, err := orm.NewOrm().QueryTable("item").Filter("username", username).All(&items)
 	if err != nil {

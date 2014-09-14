@@ -9,6 +9,12 @@
   float: right;
 }
 
+/* Seem not work
+.item_description {
+  font-size: x-large;
+}
+*/
+
 /* Like Bootstrap container but tighter */
 .my_container {
   padding: 0px 20px 20px 20px;

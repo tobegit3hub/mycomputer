@@ -30,13 +30,13 @@
   <!-- Display all items which are images and descriptions-->
   <ul class="timeline">
     <!-- Normal view for search items -->
-
-    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items | filter: search) track by $index">
+    <!-- Todo: add edit button to edit item -->
+    <li ng-class-even="'timeline-inverted'" ng-repeat="item in filter_items = (items | filter: search) | orderBy:-Number track by $index">
       <div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
         <img class="timeline-image" ng-src={{item.Image}}>
         <div class="timeline-body">
-          <p>{{item.Description}}</p>
+          <h4>{{item.Description}}</h4>
         </div>
       </div>
     </li>
@@ -52,17 +52,18 @@
       </div>
     </li>
 
-    <!-- If not search, add a button to add item -->
+    <!-- If not search, add a button to display form to add a item -->
     <li class="timeline-inverted" ng-show="items.length == filter_items.length">
       <div class="timeline-badge primary" ng-click="adding=!adding"><i class="glyphicon glyphicon-edit"></i></div>
-      <!-- Click add button will pop up a form to add item -->
+      <!-- Click add button will pop up or close a form -->
       <div class="timeline-panel" ng-show="adding" >
-        <form role="form" ng-submit="adding=false">
-          <input type="username" class="form-control" placeholder="Number" required>
-          <input type="username" class="form-control" placeholder="Username" required>
-          <input type="username" class="form-control" placeholder="Image" required>
-          <textarea rows="4" type="comment" class="form-control" placeholder="Description" required></textarea>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Add item</button>
+        <form action="/api/item" method="post" id="item" role="form" ng-submit="adding=false">
+          <input name="number" class="form-control" placeholder="Number" required>
+          <input name="username" class="form-control" placeholder="Username" required>
+          <input name="image" class="form-control" placeholder="Image" required>
+          <input name="description" class="form-control" placeholder="Description" required>
+          <!-- Todo: submit the form and return to the same page -->
+          <input class="btn btn-lg btn-primary btn-block" type="submit" value="Add item">
         </form>
       </div>
     </li>
