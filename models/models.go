@@ -10,7 +10,6 @@ type User struct {
      Name        string `orm:"pk"` 
      Email         string
      Description       string
-//    Posts []*Post `orm:"reverse(many)"` 
 }
 
 type Item struct {
@@ -18,7 +17,6 @@ type Item struct {
      Image                 string
      Description	   string
      Username		   string
-//     User *User `orm:"rel(fk)"`
 }
 
 type Comment struct {
@@ -70,6 +68,11 @@ func GetUser(username string) *User {
 }
 
 func GetUserItems(username string) []*Item {
-
-     return []*Item{}
+    
+     var items []*Item
+    _, err := orm.NewOrm().QueryTable("item").Filter("username", username).All(&items)
+     if err!= nil {
+     	return nil
+     }
+     return items
 }

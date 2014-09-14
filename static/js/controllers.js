@@ -16,6 +16,10 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$routeParams', '$htt
       $scope.phones = data;
     });
 
+    $http.get('static/' + $routeParams.phoneId +'.json').success(function(data) {
+      $scope.user = data;
+    });
+
   }]);
 
 
