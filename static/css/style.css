@@ -12,6 +12,7 @@
 /* Like Bootstrap container but tighter */
 .my_container {
   padding: 0px 20px 20px 20px;
+  margin: 0px 0px 0px 0px;
 }
 
 /* The timeline css */

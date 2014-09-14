@@ -47,7 +47,7 @@ mycomputer.directive('gravatarImage', function () {
         scope.size = attrs.size;
 
         if(angular.isUndefined(scope.size)) {
-          scope.size = 60; // default to 60 pixels
+          scope.size = 40; // default to 60 pixels
         }
       });
     }

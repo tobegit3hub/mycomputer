@@ -41,10 +41,9 @@
       </div>
     </li>
 
-
     <!-- If has no item, add a pikachu item to add item -->
     <li ng-show="!items.length">
-      <div class="timeline-badge primary"><i class="glyphicon glyphicon-edit"></i></div>
+      <div class="timeline-badge warning"><i class="glyphicon glyphicon-heart"></i></div>
       <div class="timeline-panel">
         <img class="timeline-image" src="/static/image/pikachu.gif">
         <div class="timeline-body">
@@ -53,8 +52,8 @@
       </div>
     </li>
 
-    <!-- If has items, add a button to add item -->
-    <li ng-show="items.length && filter_items.length">
+    <!-- If not search, add a button to add item -->
+    <li ng-show="items.length == filter_items.length">
       <div class="timeline-badge primary"><i class="glyphicon glyphicon-edit"></i></div>
     </li>
 
