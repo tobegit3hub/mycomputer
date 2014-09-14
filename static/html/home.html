@@ -1,149 +1,179 @@
 
-    <ul class="timeline">
-        <li>
-          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+<!-- The home page to present information in timeline-->
 
-          <div class="timeline-panel">
-            <div class="timeline-image">
-              <img src="">
-            </div>
+<div ng-controller="UserItemsController"> <!-- Todo: add comment controller -->
 
-            <div class="timeline-body">
-	      <p>分享你的品质生活</p>
-              <p><small>Share your life</small></p>
-            </div>
-          </div>
-        </li>
+  <ul class="timeline">
+    <!-- Introduce mycomputer.xyz -->
+    <li>
+      <div class="timeline-badge info"><i class="glyphicon glyphicon-user"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">分享你的品质生活</h3>
+          <h3><small>Share your enviable life</small></h3>
+        </div>
+      </div>
+    </li>
 
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon gly
-phicon-credit-card"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">MyComputer.xyz是一个开源网站
-</h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p><small>It's opensource in github.com</small></p>
-            </div>
-          </div>
-        </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-leaf"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">MyComputer.xyz是一个开源网站</h3>
+          <h3><small>It's 100% open source in <a href="https://github.com/tobegit3hub/mycomputer">github</a></small></h3>
+        </div>
+      </div>
+    </li>
 
-        <li>
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title"><a href="#/tobe">Tobe, the root user</a></h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p><small>It's opensource in github.com</small></p>
-            </div>
-          </div>
-        </li>
+    <!-- Recommand offical users -->
+    <li>
+      <div class="timeline-badge primary"><i class="glyphicon glyphicon-phone"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">你可以重新感受苹果或者小米的产品</h3>
+          <h3><small>You can feel for Apple or Xiaomi</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <p><a href="/apple">mycomputer.xyz/apple</a></p>
+          <p><a href="/xiaomi">mycomputer.xyz/xiaomi</a></p>
+        </div>
+      </div>
+    </li>
 
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon gly\
-phicon-credit-card"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title"><a href="#/appel">Official Apple products</a></h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p><small>It's opensource in github.com</small></p>
-            </div>
-          </div>
-        </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge warning"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">也可以细细品味你的收藏品</h3>
+          <h3><small>And relive your collection</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <p><a href="/shuihuzhuan">mycomputer.xyz/shuihuzhuan(水浒传)</a></p>
+          <p><a href="/pikachu">mycomputer.xyz/pikachu(比卡超)</a></p>
+        </div>
+      </div>
+    </li>
 
+    <li>
+      <div class="timeline-badge info"><i class="glyphicon glyphicon-star"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">你可以了解博主的生活追求</h3>
+          <h3><small>You can know about my life</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <p><a href="/tobe">mycomputer.xyz/tobe</a></p>
+        </div>
+      </div>
+    </li>
 
-        <li>
-          <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">你可以在这里登录</h4>
-            </div>
+    <li class="timeline-inverted">
+      <div class="timeline-badge danger"><i class="glyphicon glyphicon-heart"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">也可以看看别人的穿衣打扮</h3>
+          <h3><small>And see the clothers of others</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <p><a href="/wawa">mycomputer.xyz/wawa</a></p>
+        </div>
+      </div>
+    </li>
 
-            <div class="timeline-image">
-              <img src="">
-            </div>
-            <div class="timeline-body">
-      <form class="form-signin" role="form">
-        <input type="email" class="form-control" placeholder="Email address" required>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
+    <!-- Sign up -->
+    <li>
+      <div class="timeline-badge primary"><i class="glyphicon glyphicon-cog"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">注册功能将在近期开发</h3>
+          <h3><small>Sign up will be supported soon</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <form class="form-signin" role="form">
+            <input type="username" class="form-control" placeholder="Username" required>
+            <input type="password" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </li>
 
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">也可以在这里注册</h4>
-            </div>
-              <img src="">
-            <div class="timeline-body">
-      <form class="form-signin" role="form">
-        <input type="email" class="form-control" placeholder="Email address" required>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-      </form>
+    <li class="timeline-inverted">
+      <div class="timeline-badge warning"><i class="glyphicon glyphicon-user"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">修改密码请联系管理员</h3>
+          <h3><small>Please contact administrator</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <ul class="list-unstyled">
+            <li>tobeg3oogle@gmail.com</li>
+            <li>1427077943@qq.com</li>
+          </ul
+        </div>
+      </div>
+    </li>
 
-            </div>
-          </div>
-        </li>
+    <!-- Commentt -->
+    <li>
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">有人评论</h3>
+        </div>
+        <div class="timeline-body">
+          <p>挺不错的，继续努力</p>
+        </div>
+      </div>
+    </li>
 
-        <li>
-          <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">有人评论</h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p>mycomputer.xyz/apple挺不错的</p>
-            </div>
-          </div>
-        </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">也有人评论</h3>
+        </div>
+        <div class="timeline-body">
+          <p>Oh我爱你</p>
+        </div>
+      </div>
+    </li>
 
-        <li class="timeline-inverted">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">也有人评论</h4>
-            </div>
-            <img src="">
-            <div class="timeline-body">
-              <p>试试评论</p>
-            </div>
-          </div>
-        </li>
+    <li>
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">有人评论</h3>
+        </div>
+        <div class="timeline-body">
+          <p>挺不错的，继续努力</p>
+        </div>
+      </div>
+    </li>
 
-        <li>
-          <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">有人评论</h4>
-            </div>
-            <div class="timeline-body">
-              <p>发现小米的海报做得不错</p>
-            </div>
-          </div>
-        </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">评论功能将在近期开放</h3>
+          <h3><small>Comment will be supported soon</small></h3>
+        </div>
+        <hr/>
+        <div class="timeline-body">
+          <form class="form" role="form">
+            <textarea rows="4" type="comment" class="form-control" placeholder="I think I wonder if I know ..." required></textarea>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Comment</button>
+          </form>
+        </div>
+      </div>
+    </li>
 
-        <li class="timeline-inverted">
-          <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">请留下你的评论吧</h4>
-            </div>
-            <div class="timeline-body">
-              <form>
-              <input></input>
-              </form>
-            </div>
-          </div>
-        </li>
+  </ul> <!-- End of the brilliant timeline css -->
 
-    </ul>
+</div> <!-- End of this angular page -->
