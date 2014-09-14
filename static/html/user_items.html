@@ -1,65 +1,68 @@
 
+<!-- The user items page to display all items of the user -->
+<div ng-controller="UserItemsController">
 
-      <div class="page-header row">
-
-       <div class="col-md-6">
-
-       <span class="user_name">Tobe, the root user</span>
-
-       </div>
-       <div class="col-md-4">
-         <gravatar-image email="obeg3oogle@gmail.com" size="50"></gravatar-image>
-       </div>
-
-        <div class="col-md-22 input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input type="text" class="form-control" placeholder="" ng-model="search" autofocus>
-        </div>
-
+  <!-- User profile header -->
+  <div class="page-header row">
+    <!-- User name and description -->
+    <div class="col-md-6">
+      <span class="user_name">Tobe, the root user</span>
     </div>
 
- <!-- Display all items -->
- <div ng-controller="PhoneListCtrl">
+    <!-- Gravatar image -->
+    <div class="col-md-4">
+      <gravatar-image email="obeg3oogle@gmail.com" size="50"></gravatar-image>
+    </div>
 
+    <!-- Search button with Bootstrap -->
+    <div class="col-md-22 input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+      <input type="text" class="form-control" placeholder="" ng-model="search" autofocus>
+    </div>
+  </div>
+
+  <!-- Display all items which are images and descriptions-->
   <ul class="timeline">
+    <!-- Normal view for search items -->
     <li ng-class-even="'timeline-inverted'" ng-repeat="phone in filter_phones = (phones | filter: search) ">
-          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
-         <div class="timeline-panel">
-         <img class="timeline-image" ng-src={{phone.image_url}}>
-         <div class="timeline-body">
-           <p>{{phone.snippet}}</p>
-         </div>
-         </div>
-    </li>
-
-    <!-- If no item inserted -->
-    <li ng-show="!phones.length">
-          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
-         <div class="timeline-panel">
-         <img class="timeline-image" src="/static/image/pikachu.gif">
-         <div class="timeline-body">
-          <h2>Pikachu say it's empty. Add one!</h2>
-         </div>
-    </li>
-
-    <!-- If has items -->
-    <li ng-show="phones.length && filter_phones.length">
       <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+      <div class="timeline-panel">
+        <img class="timeline-image" ng-src={{phone.image}}>
+        <div class="timeline-body">
+          <p>{{phone.description}}</p>
+        </div>
+      </div>
     </li>
 
-  </ul>
+    <!-- If has no item, add a pikachu item to add item -->
+    <li ng-show="!phones.length">
+      <div class="timeline-badge"><i class="glyphicon glyphicon-edit"></i></div>
+      <div class="timeline-panel">
+        <img class="timeline-image" src="/static/image/pikachu.gif">
+        <div class="timeline-body">
+          <h2>Pikachu say it's empty. Add one!</h2>
+        </div>
+      </div>
+    </li>
 
-  <!-- If no item when search -->
-  <div ng-hide="filter_phones.length || !phones.length">
-  <ul class="timeline">
-       <li>
-          <div class="timeline-badge"><a href="javascript:document.location.reload();" onclick="window.status='Refresh'; return true"><i class="glyphicon glyphicon-check"></i></a></div>
-         <div class="timeline-panel">
-         <img class="timeline-image" src="/static/image/pikachu.gif">
-         <div class="timeline-body">
+    <!-- If has items, add a button to add item -->
+    <li ng-show="phones.length && filter_phones.length">
+      <div class="timeline-badge"><i class="glyphicon glyphicon-add"></i></div>
+    </li>
+
+
+    <!-- If has items but search no item, add pickchu item to refresh -->
+    <li ng-hide="filter_phones.length || !phones.length">
+      <div class="timeline-badge">
+        <a href="javascript:document.location.reload();" onclick="window.status='Refresh'; return true"><i class="glyphicon glyphicon-refresh"></i></a>
+      </div>
+      <div class="timeline-panel">
+        <img class="timeline-image" src="/static/image/pikachu.gif">
+        <div class="timeline-body">
           <h2>Pikachu say no item matches. Refresh!</h2>
         </div>
-       </li>
-   </ul>
+      </div>
+    </li>
+  </ul> <!-- End of the brilliant timeline css -->
 
-</div>
+</div> <!-- End of this angular page -->

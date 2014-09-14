@@ -1,36 +1,33 @@
+
 <!DOCTYPE html>
-<html ng-app="phonecatApp">
+<!-- Use angular and named mycomputer -->
+<html ng-app="mycomputer">
   <head>
-    <title>tobe</title>
-
+    <title>mycomputer</title>
     <meta charset="UTF-8">
-
     <base href="/">
 
+    <!-- Css -->
     <link rel="stylesheet" type="text/css" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-<script src="static/bower_components/angular/angular.min.js"></script>
-<script src="static/bower_components/angular-route/angular-route.min.js"></script>
-<script src="static/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<script src="static/js/app.js"></script>
-<script src="static/js/controllers.js"></script>
-
+    <!-- JavaScript -->
+    <script src="static/bower_components/angular/angular.min.js"></script>
+    <script src="static/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/controllers.js"></script>
   </head>
 
   <body>
- 
     <!-- No header -->
 
-    <!-- The home view and user view -->
+    <!-- Angular views, more on static/js/app.js -->
     <div class="my_container">
       <div ng-view></div>
     </div>
 
     <!-- No footer -->
-
   </body>
-
 </html>

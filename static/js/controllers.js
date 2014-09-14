@@ -2,30 +2,23 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var mycomputerControllers = angular.module('mycomputerControllers', []);
 
-phonecatControllers.controller('HomeCtrl', ['$scope',
+mycomputerControllers.controller('HomeController', ['$scope',
   function($scope) {
 
   }]);
 
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', '$routeParams', '$http',
+mycomputerControllers.controller('UserItemsController', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
-    $http.get('static/' + $routeParams.phoneId +'.json').success(function(data) {
+//    $http.get('/api/' + $routeParams.username).success(function(data) {
+    $http.get('/static/' + $routeParams.username + ".json").success(function(data) {
       $scope.phones = data;
     });
 
-    $http.get('static/' + $routeParams.phoneId +'.json').success(function(data) {
+/*    $http.get('static/' + $routeParams.username +'.json').success(function(data) {
       $scope.user = data;
     });
-
-  }]);
-
-
-/*
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
-    $scope.phoneId = $routeParams.phoneId;
-  }]);
 */
+  }]);
