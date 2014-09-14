@@ -7,8 +7,9 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatControllers'
 ]);
 
-phonecatApp.config(['$routeProvider',
-  function($routeProvider) {
+phonecatApp.config(['$locationProvider', '$routeProvider',
+  function($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider.
       when('/', {
         templateUrl: '/static/html/home.html',

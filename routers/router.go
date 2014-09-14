@@ -7,10 +7,11 @@ import (
 
 func init() {
 
-    /* Angular home page */
+    /* Angular page and router */
     beego.Router("/", &controllers.MainController{})
+    beego.Router("/:user", &controllers.MainController{})
 
     /* Api for angular requests */
-    beego.Router("/api/:user", &controllers.UserController{}, "get:List")
+    beego.Router("/api/:user", &controllers.ApiController{}, "get:GetUserAll")
 
 }

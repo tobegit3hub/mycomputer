@@ -12,7 +12,7 @@ phonecatControllers.controller('HomeCtrl', ['$scope',
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
-    $http.get('' + $routeParams.phoneId +'.json').success(function(data) {
+    $http.get('static/' + $routeParams.phoneId +'.json').success(function(data) {
       $scope.phones = data;
     });
 

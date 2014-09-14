@@ -58,3 +58,18 @@ db_database := beego.AppConfig.String("db_database")
 //    orm.RegisterDataBase("default", "mysql", "root:561801src@tcp(104.131.61.252:3306)/mycomputer", 30)
 }
 
+func GetUser(username string) *User {
+     user := User{Name: username}
+     err := orm.NewOrm().Read(&user, "Name")
+
+     if err != nil {
+     	return nil
+	}
+
+     return &user
+}
+
+func GetUserItems(username string) []*Item {
+
+     return []*Item{}
+}

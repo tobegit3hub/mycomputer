@@ -22,7 +22,7 @@
  <div ng-controller="PhoneListCtrl">
 
   <ul class="timeline">
-    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in filter_phones = (phones | filter: search)">
+    <li ng-class-even="'timeline-inverted'" ng-repeat="phone in filter_phones = (phones | filter: search) ">
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
          <div class="timeline-panel">
          <img class="timeline-image" ng-src={{phone.image_url}}>
