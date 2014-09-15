@@ -21,7 +21,7 @@ Mvc + mYsql + doCker + beegO + htMl + bootstraP + linUx + resTful + bowEr + angu
 
 1. `git clone https://github.comm/tobegit3hub/mycomputer.git`
 2. `bee run mycomputer`
-3. `nohup ./mycomputer & > 2014.9.14.log 2>&1`
+3. `nohup ./mycomputer &`
 4. `git pull`
 
 ## Who use it
