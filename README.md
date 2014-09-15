@@ -23,3 +23,11 @@ Mvc + mYsql + doCker + beegO + htMl + bootstraP + linUx + resTful + bowEr + angu
 2. `bee run mycomputer`
 3. `nohup ./mycomputer & > 2014.9.14.log 2>&1`
 4. `git pull`
+
+## Who use it
+
+[who_use_it.md](https://raw.github.com/tobegit3hub/mycomputer/master/who_use_it.md)
+
+## Screenshot
+
+![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot.png)
