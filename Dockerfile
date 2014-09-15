@@ -7,9 +7,10 @@ RUN apt-get install golang
 # gopath
 # go get beego
 
-
 # Install build tools
 RUN apt-get install -y git
 RUN apt-get install -y maven
 
 CMD ["./mycomputer"]
+
+# Todo: run in container, mysql not support utf-8 by default
