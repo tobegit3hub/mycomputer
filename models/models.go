@@ -13,8 +13,9 @@ type User struct {
 }
 
 type Item struct {
-	Number      int64  `orm:"pk"`//`form:"number"`
+	Id          int64  `orm:"pk;auto"`
 	Username    string //`form:"username"`
+	Number      int64  //`form:"number"`
 	Image       string //`form:"image"`
 	Description string //`form:"description"`
 }
@@ -41,8 +42,7 @@ func engine() string {
 }
 
 func init() {
-	//     orm.RegisterModelWithPrefix("mycomputer_", new(User), new(Item))
-	orm.RegisterModel(new(User), new(Item))
+	orm.RegisterModel(new(User), new(Item), new(Comment))
 	orm.RegisterDriver("mysql", orm.DR_MySQL)
 
 	db_user := beego.AppConfig.String("db_user")
@@ -51,19 +51,16 @@ func init() {
 	db_port := beego.AppConfig.String("db_port")
 	db_database := beego.AppConfig.String("db_database")
 
+	// orm.RegisterDataBase("mycomputer", "mysql", "root1:561801src1@tcp(104.131.61.2521:33061)/mycomputer")
 	orm.RegisterDataBase("default", "mysql", db_user+":"+db_password+"@tcp("+db_host+":"+db_port+")/"+db_database+"?charset=utf8")
-
-	//    orm.RegisterDataBase("default", "mysql", "root:561801src@tcp(104.131.61.252:3306)/mycomputer", 30)
 }
 
 func GetUser(username string) *User {
 	user := User{Name: username}
 	err := orm.NewOrm().Read(&user, "Name")
-
 	if err != nil {
 		return nil
 	}
-
 	return &user
 }
 

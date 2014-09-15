@@ -21,8 +21,9 @@ CREATE TABLE IF NOT EXISTS user (
 );
 
 CREATE TABLE IF NOT EXISTS item (
-   number int PRIMARY KEY,
+   id int PRIMARY KEY AUTO_INCREMENT,
    username varchar(255) REFERENCES user(name),
+   number int,
    image varchar(255),
    description varchar(255)
 );

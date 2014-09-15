@@ -37,21 +37,15 @@ func (this *ApiController) GetUserItems() {
 }
 
 func (this *ApiController) AddItem() {
-  //var item models.Item
-  //this.ParseForm(&item)
-  //orm.NewOrm().Insert(&item)
+	//var item models.Item // ORM doesn't work
+	//this.ParseForm(&item)
+	//orm.NewOrm().Insert(&item)
 
-	number, _ := this.GetInt("number")
 	username := this.GetString("username")
+	number, _ := this.GetInt("number")
 	image := this.GetString("image")
 	description := this.GetString("description")
 
-	beego.Debug(number);
-	beego.Debug(username);
-	beego.Debug(image);
-	beego.Debug(description);
-
-	item := models.Item{Number: number, Username: username, Image: image, Description: description}
+	item := models.Item{Username: username, Number: number, Image: image, Description: description}
 	orm.NewOrm().Insert(&item)
-
 }
