@@ -26,7 +26,7 @@ Mvc + mYsql + doCker + beegO + htMl + bootstraP + linUx + resTful + bowEr + angu
 
 ## Who use it
 
-[who_use_it.md](https://raw.github.com/tobegit3hub/mycomputer/master/who_use_it.md)
+[who_use_it.md](https://github.com/tobegit3hub/mycomputer/blob/master/who_use_it.md)
 
 ## Screenshot
 
