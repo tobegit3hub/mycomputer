@@ -1,3 +1,4 @@
+
 /* Make MySQL support utf-8
 root@ emacs /etc/mysql/my.cnf
 [client]
@@ -31,4 +32,4 @@ CREATE TABLE IF NOT EXISTS item (
 CREATE TABLE IF NOT EXISTS comment (
   id int PRIMARY KEY AUTO_INCREMENT,
   content varchar(255)
-)
+);

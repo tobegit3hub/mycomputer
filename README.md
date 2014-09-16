@@ -7,7 +7,9 @@ Mvc + mYsql + doCker + beegO + htMl + bootstraP + linUx + resTful + bowEr + angu
 
 [mycomputer.xyz](http://mycomputer.xyz)是一个100%开源的收藏者网站，“分享你的品质生活”。
 
-你也可以通过源码学习Beego后台服务的开发和AngularJS前端框架的演练。项目也使用到很多Web开发技术，如使用MVC系统架构，MySQL进行数据存储，Docker进行项目封装，Bootstrap作为前端样式，Linux作为开发部署平台，RESTful作为协议标准，Bower作为前端类库管理。
+在这里你可以找到[苹果公司的官方产品](http://mycomputer.xyz/apple)，也可以看看[小米的产品线](http://mycomputer.xyz/xiaomi)；你可以回味以前收藏过的[水浒传卡片](http://mycomputer.xyz/水浒传)，也可以回想GameBoy中的[宠物小精灵](http://mycomputer.xyz/tobe_pokemon)；你可以了解[博主的品质生活](http://mycomputer.xyz/tobe)，也可以看看[别人的穿衣打扮](http://mycomputer.xyz/wawa)。来分享你的品质生活吧，让关心你的人能够更“关心”你。
+
+你也可以通过源码学习Beego后台服务的开发和AngularJS前端框架的演练。项目用到很多Web开发技术，如使用MVC系统架构，MySQL进行数据存储，Docker进行依赖隔离，Bootstrap作为前端样式，Linux作为开发部署平台，RESTful作为通信协议，Bower作为前端类库管理工具。
 
 ## Development
 
