@@ -59,8 +59,8 @@
       <div class="timeline-panel" ng-show="adding" >
         <form action="/api/item" method="post" id="item" role="form" ng-submit="adding=false">
           <input name="username" class="form-control" placeholder="Username" required>
-          <input name="number" class="form-control" placeholder="Number" required>
-          <input name="image" class="form-control" placeholder="Image" required>
+          <input name="number" class="form-control" placeholder="Image Number" required>
+          <input name="image" class="form-control" placeholder="Image URL" required>
           <input name="description" class="form-control" placeholder="Description" required>
           <!-- Todo: submit the form and return to the same page -->
           <input class="btn btn-lg btn-primary btn-block" type="submit" value="Add item">
