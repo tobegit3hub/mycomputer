@@ -30,6 +30,14 @@ Mvc + mYsql + doCker + beegO + htMl + bootstraP + linUx + resTful + bowEr + angu
 
 [who_use_it.md](https://github.com/tobegit3hub/mycomputer/blob/master/who_use_it.md)
 
+## Monitor
+
+[Qi Niu](https://portal.qiniu.com)
+
+[Google Analytics](https://www.google.com/analytics/web/)
+
+[New Relic](https://rpm.newrelic.com/)
+
 ## Screenshot
 
 ![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot.png)
