@@ -2,14 +2,14 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/yvasiyarov/beego_gorelic"
 	"mycomputer/controllers"
+	//"github.com/yvasiyarov/beego_gorelic"
 )
 
 /* Initialize the router */
 func init() {
 	/* Add NewRelic monitor */
-	beego_gorelic.InitNewrelicAgent()
+	//beego_gorelic.InitNewrelicAgent()
 
 	/* Angular page and router */
 	beego.Router("/", &controllers.MainController{})
