@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"mycomputer/controllers"
+	"github.com/tobegit3hub/mycomputer/controllers"
 	//"github.com/yvasiyarov/beego_gorelic"
 )
 

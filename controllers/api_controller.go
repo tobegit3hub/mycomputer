@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	"mycomputer/models"
+	"github.com/tobegit3hub/mycomputer/models"
 )
 
 type ApiController struct {
