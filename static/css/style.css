@@ -21,12 +21,12 @@
   margin: 0px 0px 0px 0px;
 }
 
-/* The timeline css */
 img.timeline-image {
     width:100%;
-    max-width:600px;
+/*    max-width:600px; */
 }
 
+/* The timeline css */
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
