@@ -1,23 +1,22 @@
 
 /* UserItem page inline header */
 .useritems-header {
-
+  padding-top: 7px;
 }
 
 /* Username float left */
 .useritems-username {
   float:left;
-
 }
 
 /* User gravatar stay in the middle */
 .useritems-gravatar {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin: auto;
-    padding-top: 15px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+  padding-top: 15px;
 }
 
 /* Search form float right */
