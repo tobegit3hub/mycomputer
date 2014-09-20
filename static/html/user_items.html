@@ -2,30 +2,23 @@
 <!-- The user items page to display all items of the user -->
 <div ng-controller="UserItemsController">
 
-  <!-- User profile header -->
-  <div class="page-header row">
-    <!-- User name and description -->
-    <div class="col-md-6">
-      <div ng-show="user">
-        <span class="user_name">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></span>
-      </div>
-      <!-- If has no use, Todo: add button to add user
-      <div ng-show="!user">
-        <span class="user_name">No such user</span>
-      <div> -->
+  <!-- user items page header -->
+  <div class="container useritems-header">
+    <!-- Display username in the left-->
+    <div class="useritems-username">
+      <h2>{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></h2>
     </div>
 
-    <!-- Gravatar image -->
-    <div class="col-md-4">
-      <gravatar-image email={{user.Email}} size="50"></gravatar-image>
-    </div>
+    <!-- Display user gravatar in the middle -->
+    <div class="useritems-gravatar"><gravatar-image email={{user.Email}} size="50"></gravatar-image></div>
 
-    <!-- Search button with Bootstrap -->
-    <div class="col-md-22 input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-      <input type="text" class="form-control" placeholder="" ng-model="search" autofocus>
+    <!-- Display search form in the right -->
+    <div class="useritems-search input-group">
+      <input type="text" class="form-control" placeholder="search" ng-model="search" autofocus>
     </div>
-  </div>
+  </div> <!-- End of user items page header -->
+
+  <hr/>
 
   <!-- Display all items which are images and descriptions-->
   <ul class="timeline">

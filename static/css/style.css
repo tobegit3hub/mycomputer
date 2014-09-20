@@ -1,19 +1,30 @@
 
-/* To make header inline in user items page */
-.user_name {
-  margin-top: -5px;
-  font-size: xx-large;
+/* UserItem page inline header */
+.useritems-header {
+
 }
 
-.user_gravatar {
+/* Username float left */
+.useritems-username {
+  float:left;
+
+}
+
+/* User gravatar stay in the middle */
+.useritems-gravatar {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    padding-top: 15px;
+}
+
+/* Search form float right */
+.useritems-search {
   float: right;
+  padding-top: 23px;
 }
-
-/* Seem not work
-.item_description {
-  font-size: x-large;
-}
-*/
 
 /* Like Bootstrap container but tighter */
 .my_container {
@@ -21,9 +32,9 @@
   margin: 0px 0px 0px 0px;
 }
 
+/* Display images responsively */
 img.timeline-image {
     width:100%;
-/*    max-width:600px; */
 }
 
 /* The timeline css */
