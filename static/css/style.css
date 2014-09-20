@@ -16,13 +16,13 @@
   left: 0;
   text-align: center;
   margin: auto;
-  padding-top: 15px;
+  padding-top: 12px;
 }
 
 /* Search form float right */
 .useritems-search {
   float: right;
-  padding-top: 23px;
+  padding-top: 21px;
 }
 
 /* Like Bootstrap container but tighter */
