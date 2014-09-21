@@ -38,6 +38,6 @@ Mvc + jquerY + doCker + beegO + Mysql + bootstraP + linUx + resTful + bowEr + an
 
 ## Screenshot
 
-![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot.png)
+![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot1.png)
 
 ![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot2.png)
