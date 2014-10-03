@@ -2,7 +2,6 @@
 <!-- The home page to present information in timeline-->
 
 <div ng-controller="HomeController"> <!-- Todo: add comment controller -->
-
   <ul class="timeline">
     <!-- Introduce mycomputer.xyz -->
     <li>
@@ -93,16 +92,15 @@
       <div class="timeline-badge primary"><i class="glyphicon glyphicon-cog"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h3 class="timeline-title">注册功能将在近期开放</h3>
-          <h3><small>Sign up will be supported soon</small></h3>
+          <h3 class="timeline-title">马上登陆或者注册</h3>
+          <h3><small>Sign up or login now</small></h3>
         </div>
         <hr/>
-        <div class="timeline-body">
-          <form class="form-signin" role="form">
-            <input name="username" class="form-control" placeholder="Username" required>
-            <input name="description" class="form-control" placeholder="Description" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-          </form>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="username" placeholder="Username" required>
+          <span class="input-group-btn">
+            <a ng-href="/{{username}}"><button class="btn btn-default" type="button">Go</button></a>
+          </span>
         </div>
       </div>
     </li>
