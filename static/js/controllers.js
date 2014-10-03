@@ -10,8 +10,8 @@ mycomputerControllers.controller('HomeController', ['$scope', '$routeParams', '$
     /* Get the comment objects */
     $http.get('/api/comment').success(function(data) {
       /* If the data is empty string, don't return objects */
-      if(typeof data.Content == "undefined") {
-        $scope.comments = data;//null;
+      if(typeof data.Id == "undefined") {
+        $scope.comments = null;
       } else {
         $scope.comments = data;
       }
