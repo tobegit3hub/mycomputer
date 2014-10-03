@@ -5,8 +5,17 @@
 var mycomputerControllers = angular.module('mycomputerControllers', []);
 
 /* Todo: add comment */
-mycomputerControllers.controller('HomeController', ['$scope',
-  function($scope) {
+mycomputerControllers.controller('HomeController', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    /* Get the user data */
+    $http.get('/api/comment').success(function(data) {
+      /* If the data is empty string, don't return objects */
+      if(typeof data.Content == "undefined") {
+        $scope.comments = data;//null;
+      } else {
+        $scope.comments = data;
+      }
+    });
 }]);
 
 /* This controller to get user and items from mycomputer beego api */

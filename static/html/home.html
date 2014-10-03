@@ -1,7 +1,7 @@
 
 <!-- The home page to present information in timeline-->
 
-<div ng-controller="UserItemsController"> <!-- Todo: add comment controller -->
+<div ng-controller="HomeController"> <!-- Todo: add comment controller -->
 
   <ul class="timeline">
     <!-- Introduce mycomputer.xyz -->
@@ -163,17 +163,29 @@
       </div>
     </li>
 
+    <li ng-class-even="'timeline-inverted'" ng-repeat="comment in comments track by $index">
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Comment #{{comment.Id}}</h3>
+        </div>
+        <div class="timeline-body">
+          <p>{{comment.Content}}</p>
+        </div>
+      </div>
+    </li>
+
     <li class="timeline-inverted">
       <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h3 class="timeline-title">评论功能将在近期开放</h3>
-          <h3><small>Comment will be supported soon</small></h3>
+          <h3 class="timeline-title">评论功能实现了</h3>
+          <h3><small>Leave your comment</small></h3>
         </div>
         <hr/>
         <div class="timeline-body">
-          <form class="form" role="form">
-            <textarea rows="4" type="comment" class="form-control" placeholder="I think I wonder if I know ..." required></textarea>
+          <form class="form" action="/api/comment" method="post" id="comment" role="form">
+            <textarea name="content" rows="4" type="comment" class="form-control" placeholder="I think I wonder if I know ..." required></textarea>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Comment</button>
           </form>
         </div>

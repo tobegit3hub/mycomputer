@@ -16,7 +16,12 @@ func init() {
 	beego.Router("/:user", &controllers.MainController{})
 
 	/* Api for angular requests */
+	beego.Router("/api/:user", &controllers.ApiController{}, "post:AddUser")
 	beego.Router("/api/:user", &controllers.ApiController{}, "get:GetUser")
-	beego.Router("/api/:user/items", &controllers.ApiController{}, "get:GetUserItems")
+
 	beego.Router("/api/item", &controllers.ApiController{}, "post:AddItem")
+	beego.Router("/api/:user/items", &controllers.ApiController{}, "get:GetUserItems")
+
+	beego.Router("/api/comment", &controllers.ApiController{}, "post:AddComment")
+	beego.Router("/api/comment", &controllers.ApiController{}, "get:GetComments")
 }

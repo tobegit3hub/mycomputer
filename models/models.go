@@ -72,3 +72,12 @@ func GetUserItems(username string) []*Item {
 	}
 	return items
 }
+
+func GetComments() []*Comment {
+	var comments []*Comment
+	_, err := orm.NewOrm().QueryTable("comment").Limit(10).OrderBy("-id").All(&comments)
+	if err != nil {
+		return nil
+	}
+	return comments
+}

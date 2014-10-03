@@ -2,15 +2,31 @@
 <!-- The user items page to display all items of the user -->
 <div ng-controller="UserItemsController">
 
+  <!-- If it's a new user, display a form to add user -->
+  <div ng-show="!user">
+    <hr/>
+    <!-- Todo -->
+    <form class="form-signin" action="/api/user" method="post" id="user" role="form">
+      <input ng-model="name" name="name" class="form-control" placeholder="Name" required>
+      <input ng-model="description" name="description" class="form-control" placeholder="Description" required>
+      <input ng-model="email" name="email" class="form-control" placeholder="Email" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Add User</button>
+    </form>
+    <hr/>
+  </div>
+
   <!-- user items page header -->
   <div class="container useritems-header">
     <!-- Display username in the left-->
     <div class="useritems-username">
-      <h2>{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></h2>
+      <!-- If the user existes, display his or her name -->
+      <h2 ng-show="user">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></h2>
+      <h2 ng-show="!user">{{name}}&nbsp;&nbsp;<small><i>{{description}}</i><small></h2>
     </div>
 
     <!-- Display user gravatar in the middle -->
-    <div class="useritems-gravatar"><gravatar-image email={{user.Email}} size="50"></gravatar-image></div>
+    <div ng-show="user" class="useritems-gravatar"><gravatar-image email={{user.Email}} size="50"></gravatar-image></div>
+    <div ng-show="!user" class="useritems-gravatar"><gravatar-image email={{email}} size="50"></gravatar-image></div>
 
     <!-- Display search form in the right -->
     <div class="useritems-search input-group">
