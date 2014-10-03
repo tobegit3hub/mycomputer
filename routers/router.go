@@ -12,8 +12,8 @@ func init() {
 	//beego_gorelic.InitNewrelicAgent()
 
 	/* Angular page and router */
-  beego.Router("/", &controllers.MainController{})
-	beego.Router("/who_use_it", &controllers.MainController{})	
+	beego.Router("/", &controllers.MainController{})
+	beego.Router("/who_use_it", &controllers.MainController{})
 	beego.Router("/:user", &controllers.MainController{})
 
 	/* Api for angular requests */
