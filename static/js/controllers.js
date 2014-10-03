@@ -45,3 +45,18 @@ mycomputerControllers.controller('UserItemsController', ['$scope', '$routeParams
     $scope.adding = false;
   }
 ]);
+
+/* This controller to get user and items from beego api */
+mycomputerControllers.controller('WhoUseItController', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    /* Get the user objects */
+    $http.get('/api/users').success(function(data) {
+      /* If the data is empty string, don't return objects */
+      if (typeof data[0].Name == "undefined") {
+        $scope.users = null;
+      } else {
+        $scope.users = data;
+      }
+    });
+  }
+]);

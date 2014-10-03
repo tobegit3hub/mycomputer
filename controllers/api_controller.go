@@ -35,6 +35,19 @@ func (this *ApiController) GetUser() {
 	this.ServeJson()
 }
 
+/* Return user objects */
+func (this *ApiController) GetUsers() {
+	users := models.GetUsers()
+
+	if users == nil {
+		this.Data["json"] = ""
+	} else {
+		this.Data["json"] = users
+	}
+
+	this.ServeJson()
+}
+
 /* Receive parameters from form and add item */
 func (this *ApiController) AddItem() {
 	username := this.GetString("username")

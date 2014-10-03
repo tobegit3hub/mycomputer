@@ -19,6 +19,10 @@ mycomputer.config(['$locationProvider', '$routeProvider',
         templateUrl: '/static/html/home.html',
         controller: 'HomeController'
       }).
+      when('/who_use_it', {
+        templateUrl: '/static/html/who_use_it.html',
+        controller: 'WhoUseItController'
+      }).
       when('/:username', {
         templateUrl: '/static/html/user_items.html',
         controller: 'UserItemsController'

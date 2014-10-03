@@ -69,6 +69,16 @@ func GetUser(username string) *User {
 	return &user
 }
 
+/* Return all user objects */
+func GetUsers() []*User {
+	var users []*User
+	_, err := orm.NewOrm().QueryTable("user").OrderBy("name").All(&users)
+	if err != nil {
+		return nil
+	}
+	return users
+}
+
 /* Give username and return item objects */
 func GetUserItems(username string) []*Item {
 	var items []*Item
