@@ -5,6 +5,7 @@ import (
 	"github.com/qiniu/api/rs"
 )
 
+/* Todo: Upload images */
 func UploadFile(localFile string, destName string) (addr string, err error) {
 	policy := new(rs.PutPolicy)
 	policy.Scope = QiniuScope

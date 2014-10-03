@@ -8,7 +8,7 @@ import (
 
 /* Initialize the router */
 func init() {
-	/* Add NewRelic monitor */
+	/* Todo: Add NewRelic monitor */
 	//beego_gorelic.InitNewrelicAgent()
 
 	/* Angular page and router */

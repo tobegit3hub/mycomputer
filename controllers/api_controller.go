@@ -6,10 +6,12 @@ import (
 	"github.com/tobegit3hub/mycomputer/models"
 )
 
+/* Implement the RESTful server to return JSON */
 type ApiController struct {
 	beego.Controller
 }
 
+/* Receive parameters from form and add user */
 func (this *ApiController) AddUser() {
 	name := this.GetString("name")
 	email := this.GetString("email")
@@ -19,6 +21,7 @@ func (this *ApiController) AddUser() {
 	orm.NewOrm().Insert(&user)
 }
 
+/* Receive parameter from url and return user object */
 func (this *ApiController) GetUser() {
 	username := this.GetString(":user")
 	user := models.GetUser(username)
@@ -32,6 +35,7 @@ func (this *ApiController) GetUser() {
 	this.ServeJson()
 }
 
+/* Receive parameters from form and add item */
 func (this *ApiController) AddItem() {
 	username := this.GetString("username")
 	number, _ := this.GetInt("number")
@@ -42,6 +46,7 @@ func (this *ApiController) AddItem() {
 	orm.NewOrm().Insert(&item)
 }
 
+/* Receive parameter from url and return user item objects */
 func (this *ApiController) GetUserItems() {
 	username := this.GetString(":user")
 
@@ -55,6 +60,7 @@ func (this *ApiController) GetUserItems() {
 	this.ServeJson()
 }
 
+/* Receive parameters from form and add comment */
 func (this *ApiController) AddComment() {
 	content := this.GetString("content")
 
@@ -62,8 +68,8 @@ func (this *ApiController) AddComment() {
 	orm.NewOrm().Insert(&comment)
 }
 
+/* Return the last 9 comment objects */
 func (this *ApiController) GetComments() {
-
 	comments := models.GetComments()
 	if comments == nil || len(comments) == 0 {
 		this.Data["json"] = ""

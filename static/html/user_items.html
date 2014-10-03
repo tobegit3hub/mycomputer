@@ -1,11 +1,9 @@
 
-<!-- The user items page to display all items of the user -->
+<!-- The user items page to display all items of the user in timeline -->
 <div ng-controller="UserItemsController">
-
   <!-- If it's a new user, display a form to add user -->
   <div ng-show="!user">
     <hr/>
-    <!-- Todo -->
     <form class="form-signin" action="/api/user" method="post" id="user" role="form">
       <input ng-model="name" name="name" class="form-control" placeholder="Name" required>
       <input ng-model="description" name="description" class="form-control" placeholder="Description" required>
@@ -89,6 +87,5 @@
         </div>
       </div>
     </li>
-  </ul> <!-- End of the brilliant timeline css -->
-
+  </ul> <!-- End of the brilliant timeline unordered list -->
 </div> <!-- End of this angular page -->
