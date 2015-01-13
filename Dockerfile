@@ -1,15 +1,20 @@
 FROM ubuntu:14.04
 MAINTAINER tobe tobeg3oogle@gmail.com
+
 RUN apt-get update
 
 # Install Go
 RUN apt-get install golang
 # gopath
-# go get beego
+go get beego
+go get bee
 
 # Install build tools
 RUN apt-get install -y git
-RUN apt-get install -y maven
+
+
+RUN git clone git@github.com/tobegit3hub/mycomputer.xyz
+
 
 CMD ["./mycomputer"]
 

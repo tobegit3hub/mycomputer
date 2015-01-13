@@ -8,15 +8,23 @@ import (
 
 /* Initialize the router */
 func init() {
-	/* Add NewRelic monitor */
+	/* Todo: Add NewRelic monitor */
 	//beego_gorelic.InitNewrelicAgent()
 
 	/* Angular page and router */
 	beego.Router("/", &controllers.MainController{})
+	beego.Router("/who_use_it", &controllers.MainController{})
 	beego.Router("/:user", &controllers.MainController{})
 
 	/* Api for angular requests */
+	beego.Router("/api/:user", &controllers.ApiController{}, "post:AddUser")
 	beego.Router("/api/:user", &controllers.ApiController{}, "get:GetUser")
-	beego.Router("/api/:user/items", &controllers.ApiController{}, "get:GetUserItems")
+
+	beego.Router("/api/users", &controllers.ApiController{}, "get:GetUsers")
+
 	beego.Router("/api/item", &controllers.ApiController{}, "post:AddItem")
+	beego.Router("/api/:user/items", &controllers.ApiController{}, "get:GetUserItems")
+
+	beego.Router("/api/comment", &controllers.ApiController{}, "post:AddComment")
+	beego.Router("/api/comment", &controllers.ApiController{}, "get:GetComments")
 }

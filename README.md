@@ -17,18 +17,14 @@ Mvc + jquerY + doCker + beegO + Mysql + bootstraP + linUx + resTful + bowEr + an
 2. `go get github.com/beego/bee`
 3. `git clone https://github.comm/tobegit3hub/mycomputer.git`
 4. `emacs mycomputer/conf/app.conf`
-5. `git commit` && `git push`
-
-## Deployment
-
-1. `git clone https://github.comm/tobegit3hub/mycomputer.git`
-2. `bee run mycomputer`
-3. `nohup ./mycomputer &`
-4. `git pull`
+5. `bee run mycomputer` or `nohup ./mycomputer &`
 
 ## Who use it
 
-* [who_use_it.md](https://github.com/tobegit3hub/mycomputer/blob/master/who_use_it.md)
+* <http://mycomputer.xyz/who_use_it>
+* <http://mycomputer.xyz/apple>
+* <http://mycomputer.xyz/xiaomi>
+* <http://mycomputer.xyz/tobe>
 
 ## Monitor
 
@@ -38,6 +34,8 @@ Mvc + jquerY + doCker + beegO + Mysql + bootstraP + linUx + resTful + bowEr + an
 
 ## Screenshot
 
-![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot.png)
+![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot1.png)
 
 ![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot2.png)
+
+![mycomputer](https://raw.github.com/tobegit3hub/mycomputer/master/screenshot3.png)

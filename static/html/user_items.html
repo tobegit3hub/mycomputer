@@ -1,31 +1,38 @@
 
-<!-- The user items page to display all items of the user -->
+<!-- The user items page to display all items of the user in timeline -->
 <div ng-controller="UserItemsController">
-
-  <!-- User profile header -->
-  <div class="page-header row">
-    <!-- User name and description -->
-    <div class="col-md-6">
-      <div ng-show="user">
-        <span class="user_name">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></span>
-      </div>
-      <!-- If has no use, Todo: add button to add user
-      <div ng-show="!user">
-        <span class="user_name">No such user</span>
-      <div> -->
-    </div>
-
-    <!-- Gravatar image -->
-    <div class="col-md-4">
-      <gravatar-image email={{user.Email}} size="50"></gravatar-image>
-    </div>
-
-    <!-- Search button with Bootstrap -->
-    <div class="col-md-22 input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-      <input type="text" class="form-control" placeholder="" ng-model="search" autofocus>
-    </div>
+  <!-- If it's a new user, display a form to add user -->
+  <div ng-show="!user">
+    <hr/>
+    <form class="form-signin" action="/api/user" method="post" id="user" role="form">
+      <input ng-model="name" name="name" class="form-control" placeholder="Name" required>
+      <input ng-model="description" name="description" class="form-control" placeholder="Description" required>
+      <input ng-model="email" name="email" class="form-control" placeholder="Email" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Add User</button>
+    </form>
+    <hr/>
   </div>
+
+  <!-- user items page header -->
+  <div class="container useritems-header">
+    <!-- Display username in the left-->
+    <div class="useritems-username">
+      <!-- If the user existes, display his or her name -->
+      <h2 ng-show="user">{{user.Name}}&nbsp;&nbsp;<small><i>{{user.Description}}</i><small></h2>
+      <h2 ng-show="!user">{{name}}&nbsp;&nbsp;<small><i>{{description}}</i><small></h2>
+    </div>
+
+    <!-- Display user gravatar in the middle -->
+    <div ng-show="user" class="useritems-gravatar"><gravatar-image email={{user.Email}} size="50"></gravatar-image></div>
+    <div ng-show="!user" class="useritems-gravatar"><gravatar-image email={{email}} size="50"></gravatar-image></div>
+
+    <!-- Display search form in the right -->
+    <div class="useritems-search input-group">
+      <input type="text" class="form-control" placeholder="search" ng-model="search" autofocus>
+    </div>
+  </div> <!-- End of user items page header -->
+
+  <hr/>
 
   <!-- Display all items which are images and descriptions-->
   <ul class="timeline">
@@ -80,6 +87,5 @@
         </div>
       </div>
     </li>
-  </ul> <!-- End of the brilliant timeline css -->
-
+  </ul> <!-- End of the brilliant timeline unordered list -->
 </div> <!-- End of this angular page -->

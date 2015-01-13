@@ -1,8 +1,6 @@
 
-<!-- The home page to present information in timeline-->
-
-<div ng-controller="UserItemsController"> <!-- Todo: add comment controller -->
-
+<!-- The home page to present information of mycomputer.xyz in timeline -->
+<div ng-controller="HomeController">
   <ul class="timeline">
     <!-- Introduce mycomputer.xyz -->
     <li>
@@ -19,8 +17,8 @@
       <div class="timeline-badge success"><i class="glyphicon glyphicon-leaf"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h3 class="timeline-title">MyComputer.xyz是一个开源网站</h3>
-          <h3><small>It's 100% open source in <a href="https://github.com/tobegit3hub/mycomputer">https://github.com</a></small></h3>
+          <h3 class="timeline-title">MyComputer.xyz是开源网站</h3>
+          <h3><small>It's 100% open source in <a href="https://github.com/tobegit3hub/mycomputer">github.com</a></small></h3>
         </div>
       </div>
     </li>
@@ -66,8 +64,9 @@
         </div>
         <hr/>
         <div class="timeline-body">
+          <p><a href="/who_use_it">mycomputer.xyz/who_use_it</a></p>
           <p><a href="/tobe">mycomputer.xyz/tobe</a></p>
-          <p><a href="/tobe_book">mycomputer.xyz/tobe_book</a></p>
+          <p><a href="/linus">mycomputer.xyz/linus</a></p>
         </div>
       </div>
     </li>
@@ -82,25 +81,25 @@
         <hr/>
         <div class="timeline-body">
           <p><a href="/wawa">mycomputer.xyz/wawa</a></p>
+	  <p><a href="/tobe_clothes">mycomputer.xyz/tobe_clothes</a></p>
         </div>
       </div>
     </li>
 
-    <!-- Sign up -->
+    <!-- Sign up or login -->
     <li>
       <div class="timeline-badge primary"><i class="glyphicon glyphicon-cog"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h3 class="timeline-title">注册功能将在近期开放</h3>
-          <h3><small>Sign up will be supported soon</small></h3>
+          <h3 class="timeline-title">马上登陆或者注册</h3>
+          <h3><small>Sign up or login now</small></h3>
         </div>
         <hr/>
-        <div class="timeline-body">
-          <form class="form-signin" role="form">
-            <input name="username" class="form-control" placeholder="Username" required>
-            <input name="description" class="form-control" placeholder="Description" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-          </form>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="username" placeholder="Username" required>
+          <span class="input-group-btn">
+            <a ng-href="/{{username}}"><button class="btn btn-default" type="button">Go</button></a>
+          </span>
         </div>
       </div>
     </li>
@@ -115,69 +114,42 @@
         <hr/>
         <div class="timeline-body">
           <ul class="list-unstyled">
-            <li>tobeg3oogle@gmail.com</li>
-            <li>1427077943@qq.com</li>
-          </ul
+            <li><a href="mailto:tobeg3oogle@gmail.com?Subject=mycomputer.xyz" target="_top">tobeg3oogle@gmail.com</a></li>
+            <li><a href="mailto:1427077943@qq.com?Subject=mycomputer.xyz" target="_top">1427077943@qq.com</a></li>
+          </ul>
         </div>
       </div>
     </li>
 
-    <!-- Commentt -->
-    <li>
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+    <!-- Display comments -->
+    <li ng-class-even="'timeline-inverted'" ng-repeat="comment in comments track by $index">
+      <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h3 class="timeline-title">有人评论</h3>
+          <h3 class="timeline-title">Comment #{{comment.Id}}</h3>
         </div>
         <div class="timeline-body">
-          <p>MyComputer愿景是展示大家使用的电脑，你可知道Linus大神曾如此热爱他的MacBook Air。
-            在此基础上，我展示了我的手机、机械键盘和智能路由器，这就是我追求的品质生活。</p>
+          <p>{{comment.Content}}</p>
         </div>
       </div>
     </li>
 
+    <!-- Add comment -->
     <li class="timeline-inverted">
       <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h3 class="timeline-title">也有人评论</h3>
-        </div>
-        <div class="timeline-body">
-          <p>看过每一场苹果发布会后，有了mycomputer.xyz/apple。在小米的各种搅局后，成就了mycomputer.xyz/xiaomi。
-          小时候收集过的水浒传卡都收藏在mycomputer.xyz/水浒传。看过《浪潮之巅》吗，IT弄潮儿都在mycomputer.xyz/浪潮之巅。</p>
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h3 class="timeline-title">有人评论</h3>
-        </div>
-        <div class="timeline-body">
-          <p>我是个收藏者，这就是我的品质生活\(^o^)/~</p>
-        </div>
-      </div>
-    </li>
-
-    <li class="timeline-inverted">
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h3 class="timeline-title">评论功能将在近期开放</h3>
-          <h3><small>Comment will be supported soon</small></h3>
+          <h3 class="timeline-title">留下你的“到此一游”</h3>
+          <h3><small>Leave your comment</small></h3>
         </div>
         <hr/>
         <div class="timeline-body">
-          <form class="form" role="form">
-            <textarea rows="4" type="comment" class="form-control" placeholder="I think I wonder if I know ..." required></textarea>
+          <form class="form" action="/api/comment" method="post" id="comment" role="form">
+            <textarea name="content" rows="4" type="comment" class="form-control" placeholder="I think I wonder if I know ..." required></textarea>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Comment</button>
           </form>
         </div>
       </div>
     </li>
-
-  </ul> <!-- End of the brilliant timeline css -->
-
+  </ul> <!-- End of the brilliant timeline unordered list -->
 </div> <!-- End of this angular page -->

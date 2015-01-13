@@ -19,6 +19,10 @@ mycomputer.config(['$locationProvider', '$routeProvider',
         templateUrl: '/static/html/home.html',
         controller: 'HomeController'
       }).
+      when('/who_use_it', {
+        templateUrl: '/static/html/who_use_it.html',
+        controller: 'WhoUseItController'
+      }).
       when('/:username', {
         templateUrl: '/static/html/user_items.html',
         controller: 'UserItemsController'
@@ -35,7 +39,7 @@ mycomputer.directive('gravatarImage', function () {
     restrict: 'AE',
     replace: true,
     required: 'email',
-    template: '<img ng-src="https://www.gravatar.com/avatar/{{hash}}?s={{size}}&d=identicon" />',
+    template: '<img ng-src="https://www.gravatar.com/avatar/{{hash}}?s=50&d=identicon" />', // Todo: accept size parameter
     link: function (scope, element, attrs) {
       attrs.$observe('email', function (value) {
         if(!value) { return; }
@@ -47,7 +51,7 @@ mycomputer.directive('gravatarImage', function () {
         scope.size = attrs.size;
 
         if(angular.isUndefined(scope.size)) {
-          scope.size = 40; // default to 60 pixels
+          scope.size = 50; // default to 50 pixels
         }
       });
     }

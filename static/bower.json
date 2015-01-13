@@ -8,7 +8,7 @@
   "moduleType": [
     "node"
   ],
-  "license": "MIT",
+  "license": "Apache License",
   "ignore": [
     "**/.*",
     "node_modules",

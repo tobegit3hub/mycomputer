@@ -4,6 +4,7 @@ import (
 	"github.com/astaxie/beego"
 )
 
+/* Implement the HTTP server to return HTML files */
 type MainController struct {
 	beego.Controller
 }
